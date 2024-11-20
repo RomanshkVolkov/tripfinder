@@ -1,0 +1,34 @@
+{
+  "name": "tripfinder",
+  "description": "react next template",
+  "version": "5.4.0",
+  "private": true,
+  "author": "RedQ, Inc",
+  "scripts": {
+    "clean": "lerna clean --yes && rm -rf node_modules",
+    "clean:build": "lerna exec -- rm -rf .next dist out build .docz .firebase",
+    "start:hotel": "lerna run dev --scope=hotel-cra",
+    "start:hotel-next": "lerna run dev --scope=hotel-next",
+    "start:boat": "lerna run dev --scope=boat",
+    "build:hotel": "lerna run build --scope=hotel-cra",
+    "build:hotel-next": "lerna run build --scope=hotel-next",
+    "build:boat": "lerna run build --scope=boat",
+    "serve:hotel": "lerna run serve --scope=hotel-cra",
+    "serve:hotel-next": "lerna run serve --scope=hotel-next",
+    "serve:boat": "lerna run start --scope=boat",
+    "firebase-deploy:hotel": "build:hotel && hotel-cra run host:firebase",
+    "lint:boat": "lerna run lint --scope=boat",
+    "format:boat": "lerna run format --scope=boat",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "husky": "^9.1.6",
+    "lerna": "^8.1.8",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "serve": "^14.2.4"
+  }
+}

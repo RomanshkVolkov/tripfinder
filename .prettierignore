@@ -1,0 +1,9 @@
+.next
+.vercel
+.husky
+.vscode
+build
+public
+styles
+tsconfig.json
+postcss.config.js

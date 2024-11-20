@@ -1,0 +1,50 @@
+#!/bin/sh
+
+echo '🏗️👷 Styling, testing and building your project before committing'
+
+# Check ESLint & Prettier Format Standards
+pnpm lint:boat || (
+  echo '😤🏀👋😤 Get that weak code out of here! 😤🏀👋😤
+    ESLint Check Failed. Make the required changes listed above and try to commit again.'
+  false;
+)
+
+pnpm format || (
+  echo '🏗️👷 Prettier formatting for boat demo'
+  false;
+)
+
+# Check Prettier Standards
+pnpm check-format ||
+(
+    echo '🤢🤮🤢🤮 Your code format looks disgusting. 🤢🤮🤢🤮
+          Prettier Check Failed. Run pnpm format, add changes and try commit again.';
+    false;
+)
+
+# Check hotel demo build 
+pnpm build:hotel ||
+(
+    echo '❌👷🔨❌ Better call Bob... Because your build failed ❌👷🔨❌
+          React cra template hotel build failed: View the errors above to see why.'
+    false;
+)
+
+# Check hotel-next demo build 
+pnpm build:hotel-next ||
+(
+    echo '❌👷🔨❌ Better call Bob... Because your build failed ❌👷🔨❌
+          Next build failed hotel-next: View the errors above to see why.'
+    false;
+)
+
+# Check boat demo build 
+pnpm build:boat ||
+(
+    echo '❌👷🔨❌ Better call Bob... Because your build failed ❌👷🔨❌
+          Next build failed: View the errors above to see why.'
+    false;
+)
+   
+# If everything passes... Now we can commit
+echo '🤔🤔🤔🤔... Alright.... Code looks good to me...  I am committing this now. ✅✅✅✅'

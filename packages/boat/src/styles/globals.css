@@ -1,0 +1,586 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="checkbox"]:checked {
+		background-image: none;
+	}
+  
+  /* default theme */
+  :root {
+   /* 
+    - gray/natural colors for texts, borders and disabled elements. 
+    - If required we can use as background too. 
+    */
+
+    /* primary/brand color */
+    /* ----------------------------------- */
+    /* For rgb(17 17 17 / <alpha-value>) = #111111 */
+    --primary: 17 17 17;
+    /* For rgb(34 34 34 / <alpha-value>) = #222222 */
+    --secondary: 34 34 34;
+
+    /* gray/text color */
+    /* ----------------------------------- */
+    /* For rgb(75 85 99 / <alpha-value>) = #4B5563 */
+    --gray-light: 75 85 99;
+	/* For rgb(221 221 221 / <alpha-value>) = #dddddd */
+	--gray-lighter: 221 221 221;
+	/* For rgb(241 241 241 / <alpha-value>) = #F1F1F1 */
+	--gray-lightest: 241 241 241;
+    /* For rgb(59 80 90 / <alpha-value>) = #3B505A */
+    --gray-default: 59 80 90;
+    /* For rgb(17 17 17 / <alpha-value>) = #111111 */
+    --gray-dark: 17 17 17;
+
+	--gray-1000: 0 0 0;
+	
+    /* red/error colors */
+    /* ----------------------------------- */
+	/* For rgb(247 212 214 / <alpha-value>) = #f7d4d6 */
+    --red-lighter: 247 212 214;
+    /* For rgb(255 26 26 / <alpha-value>) = #ff1a1a */
+    --red-light: 255 26 26;
+    /* For rgb(238 0 0 / <alpha-value>) = #e00 */
+    --red-default: 238 0 0;
+    /* For rgb(197 0 0 / <alpha-value>) = #c50000 */
+    --red-dark: 197 0 0;
+
+
+    /* orange/warning colors */
+    /* ----------------------------------- */
+	/* For rgb(255 239 207 / <alpha-value>) = #ffefcf */
+    --orange-lighter: 255 239 207;
+    /* For rgb(247 185 85 / <alpha-value>) = #f7b955 */
+    --orange-light: 247 185 85;
+    /* For rgb(245 166 35 / <alpha-value>) = #f5a623 */
+    --orange-default: 245 166 35;
+    /* For rgb(171 87 10 / <alpha-value>) = #ab570a */
+    --orange-dark: 171 87 10;
+
+
+    /* green/success colors */
+    /* ----------------------------------- */
+	/* For rgb(185 249 207 / <alpha-value>) = #b9f9cf */
+    --green-lighter: 185 249 207;
+    /* For rgb(28 203 92 / <alpha-value>) = #1ccb5c */
+    --green-light: 28 203 92;
+    /* For rgb(17 168 73 / <alpha-value>) = #11a849 */
+    --green-default: 17 168 73;
+    /* For rgb(17 132 60 / <alpha-value>) = #11843c */
+    --green-dark: 17 132 60;
+
+
+
+    /* write here box shadow variation */
+    /* --card-shadow-100: 0 0 0 1px rgb(35 38 59 / 5%), 0 1px 3px 0 rgb(35 38 59 / 15%);
+    --card-shadow-500: 0 0 0 1px rgb(35 38 59 / 5%), 0 20px 32px -8px rgb(35 38 59 / 25%); */
+  }
+}
+
+@layer utilities {
+  .container-fluid {
+    @apply mx-auto max-w-[1920px] px-4 sm:px-6 2xl:px-7 3xl:px-8 4xl:px-16;
+  }
+  .card-gradient {
+    background-image: linear-gradient(120deg,#fff 45%,#f5f5f5)
+  }
+}
+
+@layer components {
+  /* ?React Datepicker Styling */
+
+	.react-datepicker {
+		@apply !border-0 w-full;
+	}
+	
+	/* month container */
+	.react-datepicker .react-datepicker__month-container {
+		@apply px-3;
+	}
+
+	/* time container */
+	.react-datepicker .react-datepicker__time-container {
+		@apply border-l-0 w-auto pr-3.5;
+	}
+
+	/* header */
+	.react-datepicker .react-datepicker__header {
+		@apply bg-white border-b-white;
+	}
+
+	/* current month name in header */
+	.react-datepicker .react-datepicker__current-month {
+		@apply mb-3 font-medium text-base;
+	}
+
+	/* sun-sat day names in header */
+  .react-datepicker .react-datepicker__day-names div {
+		@apply text-gray-400 text-sm m-1.5;
+	}
+
+	/* previous month button */
+	.react-datepicker .react-datepicker__navigation--previous {
+		@apply ml-6 rtl:mr-6;
+	}
+
+	/* next month button */
+	.react-datepicker .react-datepicker__navigation--next {
+		@apply mr-6 rtl:ml-6;
+	}
+
+	/* icon in previous month button */
+	.react-datepicker .react-datepicker__navigation-icon--previous {
+		@apply right-0.5;
+	}
+
+	/* icon in next month button */
+	.react-datepicker .react-datepicker__navigation-icon--next {
+		@apply left-0.5;
+	}
+	.react-datepicker .react-datepicker__week {
+		@apply grid grid-cols-7 
+	}
+	.react-datepicker .react-datepicker__day {
+		@apply m-2 hover:bg-gray-dark hover:!text-black
+	}
+	.react-datepicker .react-datepicker__day-name {
+		@apply m-1
+	}
+
+	/* each day */
+	.react-datepicker .react-datepicker__day {
+		@apply m-1 text-sm leading-7 text-gray-600 rounded hover:bg-gray-dark hover:text-white;
+	}
+
+	/* outside month */
+	.react-datepicker .react-datepicker__day--outside-month {
+		@apply text-gray-400 !bg-transparent;
+	}
+
+	/* keyboard selected */
+	.react-datepicker .react-datepicker__day--keyboard-selected {
+		@apply bg-white;
+	}
+
+	/* in range */
+	.react-datepicker .react-datepicker__day--in-range {
+		@apply bg-gray-lighter text-gray-dark rounded;
+	}
+
+	/* in selecting range */
+	.react-datepicker .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range) {
+		@apply !bg-gray-lighter !text-gray-dark;
+	}
+
+	/* selected */
+	.react-datepicker .react-datepicker__day--range-start, 
+	.react-datepicker .react-datepicker__day--range-end, 
+	.react-datepicker .react-datepicker__day--selected {
+		@apply bg-gray-900 text-white !rounded border-none leading-7 font-normal hover:!bg-gray-900/80 hover:!text-white;
+	}
+
+	/* inside selected range */
+	.react-datepicker .react-datepicker__day--in-selecting-range {
+		@apply hover:!bg-gray-900 hover:!text-white;
+	}
+
+	/* time list */
+	.react-datepicker .react-datepicker__time-list {
+		@apply !h-[247px];
+	}
+
+	/* time item */
+	.react-datepicker .react-datepicker__time-list-item {
+		@apply text-gray-400 text-sm rounded my-2;
+		@apply hover:bg-white hover:text-gray-900;
+	}
+
+	/* selected time item */
+	.react-datepicker .react-datepicker__time-list-item--selected {
+		@apply !bg-white !text-gray-900 !font-medium;
+	}
+
+	/* time only box */
+	.react-datepicker--time-only .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+		@apply w-auto;
+	}
+
+	/* time only item */
+	.react-datepicker--time-only .react-datepicker__time-list-item {
+		@apply rounded-none;
+	}
+
+	/* month picker text */
+	.react-datepicker .react-datepicker__month-text {
+		@apply w-0 py-1.5 px-5;
+	}
+
+	/* keyboard selected month in month picker */ 
+	.react-datepicker .react-datepicker__month-text--keyboard-selected {
+		@apply bg-white text-gray-900;
+	}
+
+	/* month in range */
+	.react-datepicker .react-datepicker__month--in-range {
+		@apply bg-gray-200 text-gray-600;
+	}
+
+	/* hover on selected months in range */
+	.react-datepicker .react-datepicker__month-text.react-datepicker__month--in-range:hover {
+		@apply bg-white text-gray-600;
+	}
+
+	/* selected month in range */
+	.react-datepicker .react-datepicker__month--range-start,
+	.react-datepicker .react-datepicker__month--range-end,
+	.react-datepicker .react-datepicker__month--selected {
+		@apply bg-gray-900 text-white font-normal;
+	}
+
+	/* hover on selected range start and end month */
+	.react-datepicker .react-datepicker__month-text.react-datepicker__month--selected:hover,
+	.react-datepicker .react-datepicker__month-text.react-datepicker__month--range-start:hover,
+	.react-datepicker .react-datepicker__month-text.react-datepicker__month--range-end:hover {
+		@apply bg-gray-900/80 text-white;
+	}
+
+	/* year wrapper in year picker */
+	.react-datepicker .react-datepicker__year-wrapper {
+		@apply inline-block max-w-[220px];
+	}
+
+	/* year text in year picker */
+	.react-datepicker .react-datepicker__year-text {
+		@apply py-1.5 px-5 w-auto;
+	}
+
+	/* keyboard selected year in year picker */
+	.react-datepicker .react-datepicker__year-text--keyboard-selected {
+		@apply bg-white text-gray-900;
+		@apply hover:bg-white hover:text-gray-900;
+	}
+
+	/* selected year in year picker */
+	.react-datepicker .react-datepicker__year-text.react-datepicker__year-text--selected {
+		@apply bg-gray-900 text-white;
+		@apply hover:bg-gray-900/80 hover:text-white;
+	}
+
+	/* year and month dropdown arrow */
+	.react-datepicker	.react-datepicker__year-read-view--down-arrow,
+	.react-datepicker	.react-datepicker__month-read-view--down-arrow {
+		@apply border-t-[1.5px] border-r-[1.5px] border-gray-400 h-[7px] w-[7px] top-[5px];
+	}
+
+	/* sub-header containing year and month dropdown */
+	.react-datepicker 
+	.react-datepicker__current-month--hasYearDropdown.react-datepicker__current-month--hasMonthDropdown 
+	~ .react-datepicker__header__dropdown {
+		@apply grid grid-cols-2 my-2 text-sm divide-x divide-gray-300;
+	}
+
+	/* month and year dropdown button in sub-header */
+	.react-datepicker .react-datepicker__month-dropdown-container--scroll,
+	.react-datepicker .react-datepicker__year-dropdown-container--scroll {
+		@apply inline-flex justify-center;
+	}
+
+	/* month and year dropdown */
+	.react-datepicker .react-datepicker__year-dropdown,
+	.react-datepicker .react-datepicker__month-dropdown {
+		@apply bg-white border border-white shadow-md w-2/5 top-auto;
+	}
+
+	/* year dropdown */
+	.react-datepicker .react-datepicker__year-dropdown {
+		@apply h-80;
+	}
+
+	/* month dropdown */
+	.react-datepicker .react-datepicker__month-dropdown {
+		@apply py-3;
+	}
+
+	/* month and year option */
+	.react-datepicker .react-datepicker__month-option,
+	.react-datepicker .react-datepicker__year-option {
+		@apply text-sm my-1 py-1 text-gray-400;
+		@apply hover:text-gray-900 hover:bg-white;
+	}
+
+	/* first and last type of month and year option */
+	.react-datepicker .react-datepicker__month-option:first-of-type,
+	.react-datepicker .react-datepicker__month-option:last-of-type,
+	.react-datepicker .react-datepicker__year-option:first-of-type,
+	.react-datepicker .react-datepicker__year-option:last-of-type {
+		@apply rounded-none;
+	}
+
+	/* selected month and year in dropdown */
+	.react-datepicker .react-datepicker__month-option--selected_month,
+	.react-datepicker .react-datepicker__year-option--selected_year {
+		@apply bg-white text-gray-1000;
+		@apply [&>span]:hidden;
+	}
+}
+
+.date-picker-wrapper .react-datepicker {
+  @apply font-lato
+}
+
+.react-datepicker-wrapper {
+  @apply w-full
+}
+
+/* google map styles  */
+
+.gmnoprint > div {
+	@apply !bg-transparent opacity-0 md:opacity-100 !shadow-none
+}
+.gmnoprint > div > div > div {
+	@apply hidden
+}
+.gm-control-active {
+	@apply !bg-white rounded-lg !mb-2 shadow-lg
+}
+
+/* calendar styles  */
+.calender-start-range, .calender-end-range, .between-range {
+	@apply  bg-[#eaeaea] text-[#9c9c9c] cursor-not-allowed
+} 
+.calender-start-range {
+	@apply rounded-tl rounded-bl
+} 
+.calender-end-range {
+	@apply rounded-tr rounded-br
+} 
+
+
+.testimonial .swiper, 
+.top-boats > .swiper,
+.new-boats > .swiper,
+.related-listing > .swiper {
+	@apply pt-1 px-1 -mx-1;
+} 
+.top-boats > .swiper,
+.new-boats > .swiper,
+.related-listing > .swiper {
+	@apply pb-1;
+}
+
+.swiper-pagination-bullet {
+	@apply !w-1.5 !h-1.5 !opacity-60;
+	background-color: rgba(241, 241, 241, 1) !important;
+	box-shadow: 0px 2px 4px 0px rgba(35, 38, 59, 0.1);
+}
+.swiper-pagination-bullet-active {
+	@apply !bg-white !opacity-100;
+	box-shadow: 0px 2px 4px 0px rgba(35, 38, 59, 0.1);
+}
+
+.react-datepicker-popper {
+  z-index: 50 !important;
+}
+.react-datepicker__triangle::before, .react-datepicker__triangle::after{
+	border-bottom-color: #fafafa !important;
+}
+
+/* react date picker  */
+.react-datepicker__day--disabled {
+	@apply !text-gray-lighter hover:!bg-transparent
+}
+
+.react-datepicker__time-list-item {
+	@apply !text-gray-dark
+}
+.react-datepicker__time-list-item--disabled {
+	@apply !text-gray-lighter
+}
+.react-datepicker .react-datepicker__year-dropdown, .react-datepicker .react-datepicker__month-dropdown  {
+    @apply h-80 
+}
+.react-datepicker .react-datepicker__month-dropdown {
+@apply overflow-y-auto overflow-x-hidden
+}
+.react-datepicker .react-datepicker__year-option:last-of-type {
+    @apply hidden
+}
+/* add scrolling class to header  */
+.transparent-header.is-scrolling  {
+	@apply bg-white shadow-card 2xl:py-4 transition-all;
+}
+.transparent-header.is-scrolling .brand-logo,
+.transparent-header.is-scrolling .primary-nav li a {
+	@apply text-black;
+}
+.header-default.is-scrolling, .addlisting-header.is-scrolling, .dashboard-header.is-scrolling {
+	@apply shadow-card 2xl:h-20
+}
+
+.listing-card .swiper-pagination {
+	@apply !z-10; 
+}
+.react-datepicker__day--disabled {
+	@apply !text-gray-lighter;
+}
+/* Swiper bullet button css */
+.swiper-button-disabled {
+	@apply hidden;
+}
+
+/* home page date picker  */
+.homepage-datepicker {
+	@apply w-full bg-white shadow-card-hover rounded-lg xl:rounded-xl overflow-hidden;
+}
+.homepage-datepicker .react-datepicker {
+	@apply w-full font-lato;
+}
+.homepage-datepicker .react-datepicker__month-container {
+	@apply w-full
+}
+.homepage-datepicker .react-datepicker__header {
+	@apply pt-2 lg:pt-3
+}
+.homepage-datepicker .react-datepicker__current-month {
+	@apply text-lg
+}
+.homepage-datepicker .react-datepicker__month {
+	@apply m-0
+}
+.homepage-datepicker .react-datepicker__navigation {
+	@apply top-2.5
+}
+.homepage-datepicker .react-datepicker__navigation--previous {
+	@apply top-3.5
+}
+.homepage-datepicker .react-datepicker__day-names, .homepage-datepicker .react-datepicker__week {
+	@apply grid grid-cols-7 justify-between items-center
+}
+.homepage-datepicker .react-datepicker__day-name, .homepage-datepicker .react-datepicker__day {
+	@apply w-auto xs:p-1
+}
+.homepage-datepicker .react-datepicker__triangle {
+	@apply after:hidden before:hidden
+}
+
+/* booking form calendar class Name  */
+.booking-form-calendar {
+	@apply -mx-[1px] !pt-1
+}
+.booking-form-calendar .react-datepicker__month-container {
+	@apply w-full
+}
+.booking-form-calendar .react-datepicker__week {
+	@apply flex items-center justify-between
+}
+.booking-form-calendar .react-datepicker__day-names {
+	@apply flex justify-between items-center pr-2.5
+}
+.booking-form-calendar .react-datepicker__day-name {
+	@apply m-0
+}
+.booking-form-calendar .react-datepicker__navigation {
+	@apply hover:border-gray-lighter hover:bg-gray-lighter
+}
+.booking-form-calendar .react-datepicker > button > span::before {
+	@apply hover:!border-gray-dark
+}
+
+.booking-form-calendar-two {
+	@apply !inset-x-0 !inset-y-auto
+}
+
+/* text shadow  */
+.tab-text-shadow {
+	text-shadow: 0 0.4px 0.2px #111111;
+}
+
+/* range slider explore page */
+.rc-slider-track, .rc-slider-rail {
+	@apply !h-1
+}
+.rc-slider-handle {
+	@apply -top-[3px] !mt-0 !opacity-80 !bg-gray-dark !border-4 !border-solid !border-white outline-1 outline outline-gray-dark focus:!outline focus:!outline-1
+}
+.rc-slider-mark-text {
+	@apply !left-full !-translate-x-full mt-2 xl:ml-2
+}
+.rc-slider-mark-text:first-child {
+	@apply !-translate-x-0 !left-0 xl:!-left-2 xl:!ml-0
+}
+
+/* google location search auto complete  */
+.pac-container {
+	@apply rounded-lg border border-gray-lightest after:hidden shadow-card-two
+}
+.pac-item {
+	@apply py-3 pl-3 text-gray font-normal cursor-pointer text-sm
+}
+.pac-matched {
+	@apply text-gray-dark text-sm
+}
+.pac-icon {
+	@apply mt-0
+}
+
+/* table style change  */
+th.rc-table-cell {
+	@apply !font-bold !text-sm !leading-6
+}
+.rc-table-cell {
+	@apply text-gray-dark text-sm md:text-base
+}
+
+/* react telephone input 2  */
+.react-tel-input {
+	@apply relative
+}
+.contact-host-phone-input .selected-flag {
+@apply !left-5 !pl-0
+}
+/* vendor public profile phone input  */
+.vendor-contact-phone-input .selected-flag {
+@apply !left-5 !pl-0
+}
+
+/* personal info phone input  */
+.personal-info-phone-input .selected-flag {
+@apply !left-2.5
+}
+
+/* step form phone input  */
+.step-form-phone-input .selected-flag {
+	@apply !left-2
+}
+
+/* table pagination  */
+.rc-pagination-item, .rc-pagination-prev {
+	@apply mr-4
+}
+.rc-pagination-item a {
+	@apply hover:!text-gray-dark
+}
+.rc-pagination-item-active a {
+	@apply !text-white hover:!text-white
+}
+.rc-pagination-disabled > div {
+	@apply !text-gray-light
+}
+
+/* listing details month  */
+.month {
+	@apply [&:nth-child(2)]:hidden sm:[&:nth-child(2)]:block [&:nth-child(3)]:hidden 3xl:[&:nth-child(3)]:block
+}
